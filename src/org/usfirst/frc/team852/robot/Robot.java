@@ -4,11 +4,13 @@ package org.usfirst.frc.team852.robot;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team852.robot.commands.ExampleCommand;
+import org.usfirst.frc.team852.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team852.robot.subsystems.ExampleSubsystem;
 
 /**
@@ -21,9 +23,13 @@ import org.usfirst.frc.team852.robot.subsystems.ExampleSubsystem;
 public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static final Drivetrain drivetrain = new Drivetrain();
 	public static OI oi;
 
 	Command autonomousCommand;
+
+	public Command DriveWithSticks;
+
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
 	/**
@@ -96,6 +102,7 @@ public class Robot extends IterativeRobot {
 		// this line or comment it out.
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
+
 	}
 
 	/**

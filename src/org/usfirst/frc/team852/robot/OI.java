@@ -1,7 +1,10 @@
 package org.usfirst.frc.team852.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.Trigger;
 import org.usfirst.frc.team852.robot.commands.ExampleCommand;
 
 /**
@@ -36,4 +39,23 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
+
+    public Joystick stick1 = new Joystick(0);
+    public Joystick stick2 = new Joystick(1);
+    public Joystick xbox = new Joystick(2);
+
+
+    // Joystick buttons start at 1
+    public Button xboxA = new JoystickButton(xbox, 1);
+    public Button xboxB = new JoystickButton(xbox, 2);
+    public Button xboxX = new JoystickButton(xbox, 3);
+    public Button xboxY = new JoystickButton(xbox, 4);
+    public Button xboxLB = new JoystickButton(xbox, 5);
+    public Button xboxRB = new JoystickButton(xbox, 6);
+    public Button xboxBack = new JoystickButton(xbox, 7);
+    public Button xboxStart = new JoystickButton(xbox, 8);
+    public Button xboxLS = new JoystickButton(xbox, 9);
+    public Button xboxRS = new JoystickButton(xbox, 10);
+
+
 }
