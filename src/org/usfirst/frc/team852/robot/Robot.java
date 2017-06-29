@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc.team852.robot.commands.ExampleCommand;
 import org.usfirst.frc.team852.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team852.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team852.robot.subsystems.Turret;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -22,13 +23,19 @@ import org.usfirst.frc.team852.robot.subsystems.ExampleSubsystem;
  */
 public class Robot extends IterativeRobot {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	public static final Drivetrain drivetrain = new Drivetrain();
+	// operator interface for systems
+	// TODO Lidars should go in here
 	public static OI oi;
 
-	Command autonomousCommand;
+	// Subsystems
+	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static final Drivetrain drivetrain = new Drivetrain();
+	public static final Turret turret = new Turret();
 
+	// Commands
+	Command autonomousCommand;
 	public Command DriveWithSticks;
+	public Command SpinUpTurret;
 
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
