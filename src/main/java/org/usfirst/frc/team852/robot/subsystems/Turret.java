@@ -56,7 +56,14 @@ public class Turret extends Subsystem {
 
     }
 
+    public void resetFlap() {
+
+        // Set the flap to a known point
+
+    }
+
     // Reset the turret after a shot
+    // Should reset any flags/logic as well as resetting hardware components
     public void reset() {
         this.hasShot = false;
         // TODO: Cancel shooting
