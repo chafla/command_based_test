@@ -39,26 +39,26 @@ public class RobotMap {
     public static TurretLaunch onTurretFire = new TurretLaunch();
 
     /////////////////////////////////////////////////////////////
-    // Constants
-    public static String CAMERA_GEAR_LOGGING_POSITION_TOPIC = "logging/camera/gear/alignment";
-    public static String LIDAR_GEAR_LOGGING_POSITION_TOPIC = "logging/lidar/gear/distance";
-    public static String LONG_LIDAR_LOGGING_POSITION_TOPIC = "logging/lidar/long/distance";
-    public static String HEADING_LOGGING_POSITION_TOPIC = "logging/heading/degrees";
-    public static String MQTT_TOPIC = "roborio/keyboard/command";
-    public static String CAMERA_TOPIC = "camera/gear/x";
-    public static String CAMERA_COMMAND = "camera/gear/x=command";
-    public static String FRONT_LIDAR_TOPIC = "lidar/front/cm";
-    public static String FRONT_LIDAR_COMMAND = "lidar/front/command";
-    public static String REAR_LIDAR_TOPIC = "lidar/rear/cm";
-    public static String REAR_LIDAR_COMMAND = "lidar/rear/command";
-    public static String LEFT_LIDAR_TOPIC = "lidar/left/mm";
-    public static String LEFT_LIDAR_COMMAND = "lidar/left/command";
-    public static String RIGHT_LIDAR_TOPIC = "lidar/right/mm";
-    public static String RIGHT_LIDAR_COMMAND = "lidar/right/command";
-    public static String MQTT_HOSTNAME = "mqtt-turtle.local"; /*"10.8.52.14";*/
-    public static String HEADING_TOPIC = "heading/degrees";
-    public static String HEADING_COMMAND = "heading/command";
-    public static int MQTT_PORT = 1883;
+    //                      Constants
+    public static final String CAMERA_GEAR_LOGGING_POSITION_TOPIC = "logging/camera/gear/alignment";
+    public static final String LIDAR_GEAR_LOGGING_POSITION_TOPIC = "logging/lidar/gear/distance";
+    public static final String LONG_LIDAR_LOGGING_POSITION_TOPIC = "logging/lidar/long/distance";
+    public static final String HEADING_LOGGING_POSITION_TOPIC = "logging/heading/degrees";
+    public static final String MQTT_TOPIC = "roborio/keyboard/command";
+    public static final String CAMERA_TOPIC = "camera/gear/x";
+    public static final String CAMERA_COMMAND = "camera/gear/x=command";
+    public static final String FRONT_LIDAR_TOPIC = "lidar/front/cm";
+    public static final String FRONT_LIDAR_COMMAND = "lidar/front/command";
+    public static final String REAR_LIDAR_TOPIC = "lidar/rear/cm";
+    public static final String REAR_LIDAR_COMMAND = "lidar/rear/command";
+    public static final String LEFT_LIDAR_TOPIC = "lidar/left/mm";
+    public static final String LEFT_LIDAR_COMMAND = "lidar/left/command";
+    public static final String RIGHT_LIDAR_TOPIC = "lidar/right/mm";
+    public static final String RIGHT_LIDAR_COMMAND = "lidar/right/command";
+    public static final String MQTT_HOSTNAME = "mqtt-turtle.local"; /*"10.8.52.14";*/
+    public static final String HEADING_TOPIC = "heading/degrees";
+    public static final String HEADING_COMMAND = "heading/command";
+    public static final int MQTT_PORT = 1883;
 
     // TODO Add the sensor stuff that will be based in mqtt
 

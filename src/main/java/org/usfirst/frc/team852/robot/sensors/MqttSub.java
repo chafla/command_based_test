@@ -5,8 +5,6 @@ import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
-import static java.lang.String.format;
-
 /**
  * Created by Matt on 7/11/2017.
  * A sensor or similar type of physical device that interacts with MQTT
@@ -27,7 +25,7 @@ public abstract class MqttSub {
             client.subscribe(this.topic, listener);
         }
         catch (MqttException e) {
-            System.out.println(format("Error in subscribe() [%s - %s]",
+            System.out.println(String.format("Error in subscribe() [%s - %s]",
                     e.getClass().getSimpleName(),
                     e.getLocalizedMessage()));
             e.printStackTrace();

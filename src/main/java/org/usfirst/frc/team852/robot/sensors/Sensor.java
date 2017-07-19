@@ -9,11 +9,6 @@ import sun.net.www.content.text.Generic;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-import static java.lang.String.format;
-
-/**
- * Created by Matt on 7/11/2017.
- */
 public abstract class Sensor extends MqttSub {
 
     protected GenericData data;
@@ -21,9 +16,8 @@ public abstract class Sensor extends MqttSub {
     protected String sensorName;
 
     public Sensor(GenericData data, String mqttTopic, String sensorName) {
-
         super(mqttTopic);
-        dataRef.set(data);  // Why can't I call this.dataref?
+        this.dataRef.set(data);
         this.sensorName = sensorName;
     }
 
