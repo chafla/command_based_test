@@ -11,7 +11,7 @@ import org.usfirst.frc.team852.robot.commands.DriveWithSticks;
 /**
  * Created by Matthew on 6/8/2017.
  */
-public class Drivetrain extends Subsystem {
+public class TankDrivetrain extends Subsystem {
 
     RobotDrive robotDrive = RobotMap.robotDrive;
     private CANTalon frontLeft = RobotMap.frontLeft;

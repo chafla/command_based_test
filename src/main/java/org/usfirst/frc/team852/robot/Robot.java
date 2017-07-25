@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team852.robot.commands.ConnectToMqtt;
 import org.usfirst.frc.team852.robot.commands.ExampleCommand;
-import org.usfirst.frc.team852.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team852.robot.subsystems.TankDrivetrain;
 import org.usfirst.frc.team852.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team852.robot.subsystems.Mqtt;
 import org.usfirst.frc.team852.robot.subsystems.Turret;
@@ -30,7 +30,7 @@ public class Robot extends IterativeRobot {
 
 	// Subsystems
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	public static Drivetrain drivetrain;
+	public static TankDrivetrain drivetrain;
 	public static Turret turret;
 	public static Mqtt mqtt = new Mqtt();
 
@@ -47,7 +47,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		drivetrain  = new Drivetrain();
+		drivetrain  = new TankDrivetrain();
 		turret = new Turret();
 		mqtt = new Mqtt();
 		chooser.addDefault("Default Auto", new ExampleCommand());
