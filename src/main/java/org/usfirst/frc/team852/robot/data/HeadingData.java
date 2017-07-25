@@ -8,8 +8,12 @@ public class HeadingData extends GenericData {
         this.degrees = degrees;
     }
 
-    public double getDegreesOnce() {
+    public double getOnce() {
         this.setInvalid();
+        return this.degrees;
+    }
+
+    public double get() {
         return this.degrees;
     }
 }

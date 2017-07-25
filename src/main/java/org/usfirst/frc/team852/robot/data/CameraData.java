@@ -1,8 +1,10 @@
 package org.usfirst.frc.team852.robot.data;
 
+// TODO: What was val?
+
 public class CameraData extends GenericData {
-    private final int val;
-    private final int width;
+    private final double val;
+    private final double width;
 
     public CameraData(final DataType dataType, final int val, final int width) {
         super(dataType);
@@ -10,12 +12,16 @@ public class CameraData extends GenericData {
         this.width = width;
     }
 
-    public int getValOnce() {
+    public double getOnce() {
         this.setInvalid();
         return this.val;
     }
 
-    public int getWidth() {
+    public double get() {
+        return this.val;
+    }
+
+    public double getWidth() {
         return this.width;
     }
 }

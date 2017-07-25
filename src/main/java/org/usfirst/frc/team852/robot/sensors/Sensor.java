@@ -23,4 +23,16 @@ public abstract class Sensor extends MqttSub {
 
     public abstract void subscribe(MqttClient client);
 
+    public GenericData getDataRef() {
+        return this.dataRef.get();
+    }
+
+    public double getReadingOnce() {
+        return this.getDataRef().getOnce();
+    }
+
+    public double getReading() {
+        return this.getDataRef().get();
+    }
+
 }

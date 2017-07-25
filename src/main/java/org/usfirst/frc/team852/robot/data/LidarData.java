@@ -1,15 +1,19 @@
 package org.usfirst.frc.team852.robot.data;
 
 public class LidarData extends GenericData {
-    private final int val;
+    private final double val;
 
     public LidarData(final DataType dataType, final int val) {
         super(dataType);
         this.val = val;
     }
 
-    public int getValOnce() {
+    public double getOnce() {
         this.setInvalid();
+        return this.val;
+    }
+
+    public double get() {
         return this.val;
     }
 }

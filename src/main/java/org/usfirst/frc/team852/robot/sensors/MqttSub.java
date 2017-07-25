@@ -24,6 +24,7 @@ public abstract class MqttSub {
         try {
             client.subscribe(this.topic, listener);
         }
+
         catch (MqttException e) {
             System.out.println(String.format("Error in subscribe() [%s - %s]",
                     e.getClass().getSimpleName(),

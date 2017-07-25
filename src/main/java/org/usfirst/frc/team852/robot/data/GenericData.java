@@ -23,4 +23,10 @@ public abstract class GenericData {
     public String getAlreadyReadMsg() {
         return this.dataType.getAlreadyReadMsg();
     }
+
+    // Discard stale data
+    public abstract double getOnce();
+
+    // Return data, even if it is stale
+    public abstract double get();
 }
