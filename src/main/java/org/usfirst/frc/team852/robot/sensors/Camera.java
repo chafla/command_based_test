@@ -6,6 +6,10 @@ import org.usfirst.frc.team852.robot.data.CameraData;
 import org.usfirst.frc.team852.robot.data.DataType;
 import org.usfirst.frc.team852.robot.data.GenericData;
 
+/**
+ * Base class for a camera sensor.
+ * This, as well as CameraData should be updated if we end up passing more values through.
+ */
 
 public class Camera extends Sensor {
 

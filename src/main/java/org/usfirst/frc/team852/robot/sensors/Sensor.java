@@ -27,10 +27,17 @@ public abstract class Sensor extends MqttSub {
         return this.dataRef.get();
     }
 
+    /**
+     * Get a data reading, marking the previous value as stale and invalid
+     * on future reads.
+     */
     public double getReadingOnce() {
         return this.getDataRef().getOnce();
     }
 
+    /**
+     * Get a single reading without marking the data as invalid.
+     */
     public double getReading() {
         return this.getDataRef().get();
     }
