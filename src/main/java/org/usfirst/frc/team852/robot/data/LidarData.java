@@ -3,8 +3,8 @@ package org.usfirst.frc.team852.robot.data;
 public class LidarData extends GenericData {
     private final double val;
 
-    public LidarData(final DataType dataType, final int val) {
-        super(dataType);
+    public LidarData(final int val) {
+        super(DataType.Lidar);
         this.val = val;
     }
 

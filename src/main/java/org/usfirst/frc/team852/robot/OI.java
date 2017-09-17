@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Trigger;
 import org.usfirst.frc.team852.robot.commands.ExampleCommand;
+import org.usfirst.frc.team852.robot.commands.TargetPeg;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -58,7 +59,8 @@ public class OI {
     public Button xboxLS = new JoystickButton(xbox, 9);
     public Button xboxRS = new JoystickButton(xbox, 10);
 
-
-
-
+    public OI() {
+        // Leave button assignments in here
+        xboxY.whileHeld(new TargetPeg());
+    }
 }

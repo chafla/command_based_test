@@ -6,20 +6,23 @@ plugins {
 }
 
 frc {
-    team = "0852"
-    robotClass = "org.usfirst.frc.team0852.robot.Robot"
+    team = "852"
+    robotClass = "org.usfirst.frc.team852.robot.Robot"
+}
+
+wpi {
+    opencvVersion = "3.1.0"
 }
 
 dependencies {
     compile wpilib()
     compile talonSrx()
-    compile navx()
     compile fileTree(dir: 'mqttlibs', include: '**/*.jar')
 }
 
 def robotManifest = {
   attributes 'Main-Class': 'edu.wpi.first.wpilibj.RobotBase'
-  attributes 'Robot-Class': frc.robotClass
+  attributes 'Robot-Class': "org.usfirst.frc.team852.robot.Robot"
 }
 
 jar {

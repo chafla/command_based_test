@@ -5,9 +5,9 @@ import org.usfirst.frc.team852.robot.Robot;
 /**
  * Created by Matthew on 6/8/2017.
  */
-public class DriveWithSticks extends Command {
+public class DriveWithSticksTank extends Command {
 
-    public DriveWithSticks() {
+    public DriveWithSticksTank() {
 
         // List out all the subsystems required for this command
 

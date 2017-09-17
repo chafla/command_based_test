@@ -25,7 +25,7 @@ public class Camera extends Sensor {
                         final String[] info = new String(msg.getPayload()).split(":");
                         final int currloc = Integer.parseInt(info[0]);
                         final int width = Integer.parseInt(info[1]);
-                        this.dataRef.set(new CameraData(DataType.Camera, currloc, width));
+                        this.dataRef.set(new CameraData(currloc, width));
                         synchronized (this.dataRef) {
                             this.dataRef.notifyAll();
                         }

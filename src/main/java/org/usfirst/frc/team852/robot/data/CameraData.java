@@ -6,8 +6,9 @@ public class CameraData extends GenericData {
     private final double val;
     private final double width;
 
-    public CameraData(final DataType dataType, final int val, final int width) {
-        super(dataType);
+    public CameraData(final int val, final int width) {
+        //dataType = DataType.Camera;
+        super(DataType.Camera);
         this.val = val;
         this.width = width;
     }

@@ -1,13 +1,14 @@
 package org.usfirst.frc.team852.robot.sensors;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.usfirst.frc.team852.robot.data.DataType;
 import org.usfirst.frc.team852.robot.data.GenericData;
-import org.usfirst.frc.team852.robot.data.LidarData;
-import sun.net.www.content.text.Generic;
 
 import java.util.concurrent.atomic.AtomicReference;
+
+/**
+ * Generic sensor class.
+ * All subclasses of this should be put into RobotMap
+ */
 
 public abstract class Sensor extends MqttSub {
 

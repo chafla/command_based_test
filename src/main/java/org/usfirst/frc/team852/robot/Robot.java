@@ -10,10 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team852.robot.commands.ConnectToMqtt;
 import org.usfirst.frc.team852.robot.commands.ExampleCommand;
-import org.usfirst.frc.team852.robot.subsystems.TankDrivetrain;
-import org.usfirst.frc.team852.robot.subsystems.ExampleSubsystem;
-import org.usfirst.frc.team852.robot.subsystems.Mqtt;
-import org.usfirst.frc.team852.robot.subsystems.Turret;
+import org.usfirst.frc.team852.robot.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,8 +27,8 @@ public class Robot extends IterativeRobot {
 
 	// Subsystems
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	public static TankDrivetrain drivetrain;
-	public static Turret turret;
+	public static DrivetrainMecanum drivetrain = new DrivetrainMecanum();
+	public static Turret turret = new Turret();
 	public static Mqtt mqtt = new Mqtt();
 
 	// Commands
@@ -47,9 +44,9 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		drivetrain  = new TankDrivetrain();
-		turret = new Turret();
-		mqtt = new Mqtt();
+		//drivetrain = new DrivetrainMecanum();
+		////turret = new Turret();
+		//mqtt = new Mqtt();
 		chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);

@@ -19,7 +19,7 @@ public class Lidar extends Sensor {
             client.subscribe(this.topic,
                     (topic, msg) -> {
                         final int msgData = Integer.parseInt(new String(msg.getPayload()));
-                        dataRef.set(new LidarData(DataType.Lidar, msgData));
+                        dataRef.set(new LidarData(msgData));
                         synchronized (dataRef) {
                             dataRef.notifyAll();
                         }

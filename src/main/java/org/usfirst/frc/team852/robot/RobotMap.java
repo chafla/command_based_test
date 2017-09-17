@@ -4,11 +4,13 @@ import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.buttons.Trigger;
+import org.usfirst.frc.team852.robot.data.CameraData;
+import org.usfirst.frc.team852.robot.data.DataType;
+import org.usfirst.frc.team852.robot.data.GenericData;
+import org.usfirst.frc.team852.robot.sensors.Camera;
+import org.usfirst.frc.team852.robot.sensors.Lidar;
 import org.usfirst.frc.team852.robot.sensors.MqttSub;
 import org.usfirst.frc.team852.robot.triggers.TurretLaunch;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -62,8 +64,18 @@ public class RobotMap {
 
     // TODO Add the sensor stuff that will be based in mqtt
 
+    public static final Camera cameraGear = new Camera(null, CAMERA_TOPIC, "camera_gear");
+    public static final Lidar leftLidar = new Lidar(null, LEFT_LIDAR_TOPIC, "left_lidar");
+    public static final Lidar rightLidar = new Lidar(null, RIGHT_LIDAR_TOPIC, "right_lidar");
+
+
     public static MqttSub[] mqttSubs = {
+            cameraGear,
+            leftLidar,
+            rightLidar
+
             // Insert MQTT subscribers here
+            // This includes all sensors
     };
 
 	// If you are using multiple modules, make sure to define both the port
