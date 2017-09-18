@@ -28,8 +28,6 @@ import static java.lang.String.format;
  */
 public class Mqtt extends Subsystem {
 
-    private boolean listenerEnabled = true;
-
     private final ExecutorService logExecutor = Executors.newFixedThreadPool(4);
     private final ExecutorService mqttExecutor = Executors.newFixedThreadPool(1);
     // Do we need executors while working with this stuff?
@@ -48,9 +46,8 @@ public class Mqtt extends Subsystem {
         return this.mqttClientRef.get();
     }
 
-    // TODO Make this run in a command in Robot on Init
     // Note: does this ever break?
-    private void initializeConnection() {
+    public void initializeConnection() {
         this.mqttExecutor.submit((Runnable) () -> {
             final String url = format("tcp://%s:%d", RobotMap.MQTT_HOSTNAME, RobotMap.MQTT_PORT);
 
@@ -174,7 +171,7 @@ public class Mqtt extends Subsystem {
     }
 */
 
-    public void subscribeToTopics(MqttSub[] subscribers) {
+    private void subscribeToTopics(MqttSub[] subscribers) {
         for (MqttSub sub: subscribers) {
             sub.subscribe(this.getMqttClient());
         }
@@ -191,5 +188,9 @@ public class Mqtt extends Subsystem {
                 e.printStackTrace();
             }
         }
+    }
+
+    public boolean isConnected() {
+        return this.getMqttClient().isConnected();
     }
 }

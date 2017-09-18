@@ -6,6 +6,8 @@ import org.usfirst.frc.team852.robot.sensors.MqttSub;
 import org.usfirst.frc.team852.robot.subsystems.Mqtt;
 import org.usfirst.frc.team852.robot.RobotMap;
 
+import static org.usfirst.frc.team852.robot.Robot.mqtt;
+
 
 /**
  * Created by Matt on 7/19/2017.
@@ -16,7 +18,7 @@ public class ConnectToMqtt extends Command {
 
     public ConnectToMqtt() {
 
-        this.requires(Robot.mqtt);
+        this.requires(mqtt);
         this.finished = false;
     }
 
@@ -28,15 +30,13 @@ public class ConnectToMqtt extends Command {
     @Override
     public void execute() {
         // Subscribe to all mqtt clients listed in RobotMap
-        Robot.mqtt.subscribeToTopics(RobotMap.mqttSubs);
-        this.finished = true;
+        mqtt.initializeConnection();
 
     }
 
     @Override
     protected boolean isFinished() {
-        return this.finished;
-
+        return mqtt.getMqttClient().isConnected();
     }
 
     @Override

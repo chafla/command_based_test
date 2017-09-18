@@ -22,7 +22,6 @@ import org.usfirst.frc.team852.robot.subsystems.*;
 public class Robot extends IterativeRobot {
 
 	// operator interface for systems
-	// TODO Lidars should go in here
 	public static OI oi;
 
 	// Subsystems
@@ -33,8 +32,8 @@ public class Robot extends IterativeRobot {
 
 	// Commands
 	Command autonomousCommand;
-	public Command DriveWithSticks;
-	Command MqttConnector = new ConnectToMqtt();
+	Command DriveWithSticks;
+	Command MqttConnector;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
 	/**
@@ -44,6 +43,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+		MqttConnector = new ConnectToMqtt();
 		//drivetrain = new DrivetrainMecanum();
 		////turret = new Turret();
 		//mqtt = new Mqtt();
