@@ -45,9 +45,8 @@ public class DrivetrainMecanum extends Subsystem {
         SmartDashboard.putNumber("Gyro Value", gyro.getAngle());
 
         /* Adjust joystick X/Y by gyro input*/
-        //double gyro_radians = RobotMap.heading.getReading() * Math.PI / 180;
         double gyro_radians = gyro.getAngle() * Math.PI / 180;
-        double tmp = forward * Math.cos(gyro_radians) + strafe * Math.sin(gyro_radians);
+        forward = forward * Math.cos(gyro_radians) + strafe * Math.sin(gyro_radians);
         strafe = -forward * Math.sin(gyro_radians) + strafe * Math.cos(gyro_radians);
 
 
