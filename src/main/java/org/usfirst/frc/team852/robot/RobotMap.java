@@ -1,13 +1,17 @@
 package org.usfirst.frc.team852.robot;
 
 import com.ctre.CANTalon;
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.buttons.Trigger;
+import edu.wpi.first.wpilibj.interfaces.Gyro;
 import org.usfirst.frc.team852.robot.data.CameraData;
 import org.usfirst.frc.team852.robot.data.DataType;
 import org.usfirst.frc.team852.robot.data.GenericData;
 import org.usfirst.frc.team852.robot.sensors.Camera;
+import org.usfirst.frc.team852.robot.sensors.Heading;
 import org.usfirst.frc.team852.robot.sensors.Lidar;
 import org.usfirst.frc.team852.robot.sensors.MqttSub;
 import org.usfirst.frc.team852.robot.triggers.TurretLaunch;
@@ -28,6 +32,7 @@ public class RobotMap {
     public static CANTalon rearLeft = new CANTalon(2);
     public static CANTalon rearRight = new CANTalon(3);
     public static RobotDrive robotDrive = new RobotDrive(frontLeft, frontRight, rearLeft, rearRight);
+    public static ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
     public static CANTalon turretRotation = new CANTalon(4);
     public static CANTalon turretLauncher = new CANTalon(5);
@@ -67,15 +72,16 @@ public class RobotMap {
     public static final Camera cameraGear = new Camera(null, CAMERA_TOPIC, "camera_gear");
     public static final Lidar leftLidar = new Lidar(null, LEFT_LIDAR_TOPIC, "left_lidar");
     public static final Lidar rightLidar = new Lidar(null, RIGHT_LIDAR_TOPIC, "right_lidar");
+    public static final Heading heading = new Heading(null, HEADING_TOPIC, "heading");
 
 
     public static MqttSub[] mqttSubs = {
-            cameraGear,
-            leftLidar,
-            rightLidar
-
             // Insert MQTT subscribers here
             // This includes all sensors
+            cameraGear,
+            leftLidar,
+            rightLidar,
+            heading
     };
 
 	// If you are using multiple modules, make sure to define both the port

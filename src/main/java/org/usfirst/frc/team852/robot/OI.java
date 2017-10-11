@@ -2,6 +2,7 @@ package org.usfirst.frc.team852.robot;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -44,7 +45,9 @@ public class OI {
 
     public Joystick stick1 = new Joystick(0);
     public Joystick stick2 = new Joystick(1);
-    public Joystick xbox = new Joystick(2);
+    public XboxController xbox = new XboxController(2);
+    // For field oriented control
+    //public Joystick turntable = new Joystick(3);
 
 
     // Joystick buttons start at 1

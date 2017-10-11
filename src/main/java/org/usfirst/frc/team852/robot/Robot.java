@@ -8,9 +8,14 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.usfirst.frc.team852.robot.commands.ConnectToMqtt;
 import org.usfirst.frc.team852.robot.commands.ExampleCommand;
+import org.usfirst.frc.team852.robot.sensors.Heading;
+import org.usfirst.frc.team852.robot.sensors.MqttSub;
 import org.usfirst.frc.team852.robot.subsystems.*;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,11 +35,13 @@ public class Robot extends IterativeRobot {
 	public static Turret turret = new Turret();
 	public static Mqtt mqtt = new Mqtt();
 
+
 	// Commands
 	Command autonomousCommand;
 	Command DriveWithSticks;
 	Command MqttConnector;
 	SendableChooser<Command> chooser = new SendableChooser<>();
+
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -42,7 +49,8 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
-		oi = new OI();
+        RobotMap.gyro.calibrate();
+	    oi = new OI();
 		MqttConnector = new ConnectToMqtt();
 		//drivetrain = new DrivetrainMecanum();
 		////turret = new Turret();
@@ -51,7 +59,6 @@ public class Robot extends IterativeRobot {
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 		this.MqttConnector.start();
-
 	}
 
 	/**
